@@ -1,0 +1,618 @@
+/* Custom CSS for Asail Store - Dark Theme */
+
+/* Root Variables for Dark Theme */
+:root {
+  --primary-bg: #121212;
+  --secondary-bg: #1e1e1e;
+  --card-bg: #2d2d2d;
+  --text-primary: #ffffff;
+  --text-secondary: #b3b3b3;
+  --accent-color: #17a2b8; /* Bootstrap info color */
+  --success-color: #28a745;
+  --danger-color: #dc3545;
+  --border-color: #3d3d3d;
+}
+
+/* Global Styles */
+body {
+  background-color: var(--primary-bg) !important;
+  color: var(--text-primary) !important;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  line-height: 1.6;
+}
+
+.advertising-phrase {
+    font-size: 1.2em;
+    color: #dc3545; /* Orange accent color */
+    font-weight: bold;
+    margin-top: 10px;
+    text-align: center;
+}
+
+/* Custom Card Styling - Fixed for Gallery Layout */
+.product-card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  transition: all 0.3s ease;
+  height: 100%;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 25px rgba(23, 162, 184, 0.3);
+  border-color: var(--accent-color);
+}
+
+.product-image {
+  width: 100%;
+  height: 250px;
+  object-fit: contain;
+  background-color: var(--secondary-bg);
+  padding: 10px;
+}
+
+.product-title {
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: var(--text-primary) !important;
+  line-height: 1.4;
+  height: 3.2rem;
+  overflow: hidden;
+  display: -webkit-box;
+  line-clamp: 2;
+  -webkit-box-orient: vertical;
+  margin-bottom: 0.5rem;
+}
+
+.product-description {
+  color: var(--text-secondary) !important;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  flex-grow: 1;
+}
+
+.product-price {
+  font-size: 1.4rem;
+  font-weight: bold;
+  color: var(--accent-color) !important;
+}
+
+.product-category {
+  background-color: var(--accent-color);
+  color: white !important;
+  border: none;
+  font-size: 0.8rem;
+  text-transform: capitalize;
+  font-weight: 500;
+}
+
+/* Gallery Grid Layout - FIXED VERSION */
+.products-grid {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+  padding: 1rem 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Force grid on different screen sizes */
+@media (min-width: 1400px) {
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr) !important;
+    gap: 2rem !important;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  .products-grid {
+    grid-template-columns: repeat(3, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 1199px) {
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr) !important;
+    gap: 1.5rem !important;
+  }
+}
+
+@media (max-width: 767px) {
+  .products-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+}
+
+/* Ensure consistent card heights */
+.product-card .card-body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  color: white !important;
+}
+
+.product-card .card-body > * {
+  color: white !important;
+}
+
+.product-card .text-muted {
+  color: var(--text-secondary) !important;
+}
+
+/* Button Styling */
+.btn-primary {
+  background-color: var(--accent-color);
+  border-color: var(--accent-color);
+  font-weight: 500;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  background-color: #138496;
+  border-color: #117a8b;
+  transform: translateY(-1px);
+}
+
+.btn-success {
+  background-color: var(--success-color);
+  border-color: var(--success-color);
+}
+
+/* Custom Form Controls */
+.form-select:focus,
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
+}
+
+/* Enhanced Navbar Styling */
+.navbar {
+  backdrop-filter: blur(10px);
+  background-color: rgba(33, 37, 41, 0.95) !important;
+  transition: all 0.3s ease;
+  z-index: 1030;
+}
+
+.navbar.sticky-top {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.3);
+}
+
+/* Logo and Brand Styling */
+.logo-container {
+  transition: transform 0.3s ease;
+}
+
+.logo-container:hover {
+  transform: rotate(360deg);
+}
+
+.logo-svg {
+  filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.3));
+}
+
+.brand-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.brand-tagline {
+  font-size: 0.7rem;
+  color: var(--text-secondary);
+  font-weight: 300;
+  letter-spacing: 0.5px;
+}
+
+/* Enhanced Navigation Links */
+.navbar-nav .nav-link {
+  font-weight: 500;
+  padding: 0.5rem 1rem !important;
+  border-radius: 6px;
+  margin: 0 0.2rem;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.navbar-nav .nav-link:hover {
+  background-color: rgba(23, 162, 184, 0.2);
+  transform: translateY(-1px);
+}
+
+.navbar-nav .nav-link.active {
+  background-color: var(--accent-color);
+  color: white !important;
+}
+
+/* Cart Badge Animation */
+.cart-pulse {
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0.7);
+  }
+  
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 10px rgba(220, 53, 69, 0);
+  }
+  
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(220, 53, 69, 0);
+  }
+}
+
+@keyframes bounce {
+  0%, 20%, 53%, 80%, 100% {
+    transform: translateY(0);
+  }
+  40%, 43% {
+    transform: translateY(-10px);
+  }
+  70% {
+    transform: translateY(-5px);
+  }
+  90% {
+    transform: translateY(-2px);
+  }
+}
+
+/* Sticky Footer Styling */
+.footer {
+  background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%) !important;
+  box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.3);
+}
+
+.footer a:hover {
+  color: var(--accent-color) !important;
+  transform: translateY(-1px);
+  transition: all 0.3s ease;
+}
+
+/* Ensure body uses full height for sticky footer */
+html, body {
+  height: 100%;
+}
+
+body {
+  display: flex !important;
+  flex-direction: column !important;
+  min-height: 100vh !important;
+}
+
+main {
+  flex: 1 0 auto;
+}
+
+.footer {
+  flex-shrink: 0;
+}
+
+/* Social links and other footer elements */
+.social-links a {
+  font-size: 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.social-links a:hover {
+  transform: scale(1.2);
+}
+
+/* Section spacing adjustment for sticky footer */
+section {
+  scroll-margin-top: 80px; /* Account for sticky navbar */
+}
+
+/* Mobile footer adjustments */
+@media (max-width: 768px) {
+  .footer {
+    text-align: center;
+  }
+  
+  .footer .col-md-6:last-child {
+    text-align: center !important;
+    margin-top: 0.5rem;
+  }
+}
+
+/* Enhanced form styling */
+.form-control:focus {
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 0.2rem rgba(23, 162, 184, 0.25);
+  background-color: var(--card-bg) !important;
+  color: white !important;
+}
+
+/* Smooth scroll behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Dropdown Menu Styling */
+.dropdown-menu {
+  border-radius: 10px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+  border: 1px solid var(--border-color);
+}
+
+.dropdown-item {
+  color: var(--text-primary) !important;
+  padding: 0.5rem 1rem;
+  transition: all 0.3s ease;
+  text-transform: capitalize;
+}
+
+.dropdown-item:hover {
+  background-color: var(--accent-color);
+  color: white !important;
+}
+
+/* Mobile Responsive Navbar and Elements */
+@media (max-width: 991px) {
+  .brand-text {
+    display: none;
+  }
+  
+  .navbar-nav .nav-link {
+    margin: 0.2rem 0;
+  }
+  
+  .navbar-collapse {
+    margin-top: 1rem;
+  }
+  
+  .display-4 {
+    font-size: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .logo-svg {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .navbar-brand {
+    font-size: 1.1rem;
+  }
+  
+  .container {
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+  }
+  
+  .product-image {
+    height: 180px;
+  }
+  
+  .display-4 {
+    font-size: 1.8rem;
+  }
+}
+
+/* Loading Spinner */
+.spinner-border {
+  width: 3rem;
+  height: 3rem;
+}
+
+/* Container and Layout Improvements - FIXED */
+.container {
+  max-width: 1200px !important;
+}
+
+/* Ensure no Bootstrap interference */
+.products-grid.row,
+.products-grid .col,
+.products-grid .col-* {
+  display: block !important;
+}
+
+/* Force grid layout - override any conflicts */
+#productsContainer {
+  display: grid !important;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)) !important;
+  gap: 1.5rem !important;
+  padding: 1rem 0 !important;
+  width: 100% !important;
+  margin: 0 !important;
+}
+
+/* Products Section Styling */
+.products-grid {
+  margin: 0 auto !important;
+  display: grid !important;
+}
+
+/* Loading spinner alignment */
+/* Ensure initial states are correct */
+#loadingSpinner {
+  display: none !important;
+}
+
+#productsContainer {
+  display: none !important;
+}
+
+/* When loading is active */
+.loading-active #loadingSpinner {
+  display: flex !important;
+}
+
+.loading-active #productsContainer {
+  display: none !important;
+}
+
+/* When loading is complete */
+.loading-complete #loadingSpinner {
+  display: none !important;
+}
+
+.loading-complete #productsContainer {
+  display: grid !important;
+}
+
+
+/* Gallery Animation and Performance */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.product-card.animate {
+  animation: fadeInUp 0.4s ease forwards;
+}
+
+/* Smooth loading and hover effects */
+.product-card {
+  will-change: transform;
+  backface-visibility: hidden;
+}
+
+.product-image {
+  transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-image {
+  transform: scale(1.05);
+}
+
+/* Gallery spacing and alignment */
+.products-grid {
+  justify-items: center;
+  align-items: start;
+}
+
+/* Ensure cards don't get too wide on very large screens */
+.product-card {
+  max-width: 350px;
+  width: 100%;
+}
+
+/* Custom scrollbar for webkit browsers */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background-color: var(--secondary-bg);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: var(--border-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--accent-color);
+}
+
+/* Alert styling for cart notifications */
+.alert-success {
+  background-color: rgba(40, 167, 69, 0.1);
+  border-color: var(--success-color);
+  color: var(--success-color);
+}
+
+.alert-danger {
+  background-color: rgba(220, 53, 69, 0.1);
+  border-color: var(--danger-color);
+  color: var(--danger-color);
+}
+
+/* ======================
+   CART PAGE STYLES
+   ====================== */
+
+/* Cart Product Card */
+.cart-product-card {
+    transition: all 0.3s ease;
+    margin-bottom: 1.5rem;
+}
+
+.cart-product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(23, 162, 184, 0.3);
+    border-color: var(--accent-color);
+}
+
+/* Cart Product Image */
+.cart-product-img {
+    max-height: 120px;
+    width: auto;
+    object-fit: contain;
+    background-color: var(--secondary-bg);
+    padding: 10px;
+    border-radius: 8px;
+}
+
+/* Quantity Input */
+.cart-quantity-input {
+    max-width: 80px;
+    text-align: center;
+}
+
+/* Remove Button */
+.cart-remove-btn {
+    transition: all 0.2s ease;
+}
+
+.cart-remove-btn:hover {
+    transform: scale(1.1);
+}
+
+/* Summary Card */
+.cart-summary-card {
+    position: sticky;
+    top: 20px;
+    border: 1px solid var(--accent-color);
+}
+
+/* Empty Cart Message */
+#cartItemsContainer .text-center {
+    padding: 3rem 0;
+}
+
+#cartItemsContainer .text-center h4 {
+    color: var(--accent-color);
+}
+
+/* Responsive Adjustments */
+@media (max-width: 991px) {
+    .cart-product-img {
+        max-height: 100px;
+    }
+    
+    .cart-summary-card {
+        margin-top: 2rem;
+    }
+}
+
+@media (max-width: 767px) {
+    .cart-product-card .row > div {
+        margin-bottom: 0.5rem;
+    }
+    
+    .cart-product-img {
+        max-height: 80px;
+    }
+    
+    .cart-remove-btn {
+        width: 100%;
+    }
+}
